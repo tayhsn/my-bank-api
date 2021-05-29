@@ -1,5 +1,4 @@
-import { promises as fs } from 'fs';
-const { readFile, writeFile } = fs;
+import AccountService from '../services/account.service.js';
 
 async function createAccount(req, res, next) {
 	try {
@@ -9,16 +8,7 @@ async function createAccount(req, res, next) {
 			throw new Error('Name and Balance are required.');
 		}
 
-		const data = JSON.parse(await readFile(fileName));
-
-		account = {
-			id: data.nextId++,
-			name: account.name,
-			balance: account.balance,
-		};
-		data.accounts.push(account);
-
-		await writeFile(fileName, JSON.stringify(data, null, 2));
+		account = await AccountService.createAccount(account);
 		res.send(account);
 
 		logger.info(`POST /account - ${JSON.stringify(account)}`);
@@ -29,8 +19,7 @@ async function createAccount(req, res, next) {
 
 async function getAccounts(req, res, next) {
 	try {
-		const data = JSON.parse(await readFile(fileName));
-		delete data.nextId;
+		const data = await AccountService.getAccounts();
 		res.send(data);
 
 		logger.info('GET /account');
@@ -40,11 +29,8 @@ async function getAccounts(req, res, next) {
 }
 
 async function getAccount(req, res, next) {
-    try {
-		const data = JSON.parse(await readFile(fileName));
-		const account = data.accounts.find(
-			(account) => account.id === parseInt(req.params.id),
-		);
+	try {
+		const account = await AccountService.getAccount(req.paramsid);
 		res.send(account);
 		logger.info('GET /account/:id');
 	} catch (err) {
@@ -54,13 +40,7 @@ async function getAccount(req, res, next) {
 
 async function deleteAccount(req, res, next) {
 	try {
-		const data = JSON.parse(await readFile(fileName));
-
-		data.accounts = data.accounts.filter(
-			(account) => account.id !== parseInt(req.params.id),
-		);
-
-		await writeFile(fileName, JSON.stringify(data, null, 2));
+		await AccountService.deleteAccount(req.params.id);
 		res.end();
 
 		logger.info(`DELETE /account - ${req.params.id}`);
@@ -70,24 +50,15 @@ async function deleteAccount(req, res, next) {
 }
 
 async function updateAccont(req, res, next) {
-    try {
-		const account = req.body;
+	try {
+		let account = req.body;
 
 		if (!account.id || !account.name || account.balance == null) {
 			throw new Error('ID, Name and Balance are required.');
 		}
 
-		const data = JSON.parse(await readFile(fileName));
-		const index = data.accounts.findIndex((a) => a.id === account.id);
+		account = await AccountService.updateAccont(account);
 
-		if (index === -1) {
-			throw new Error('Data not found.');
-		}
-
-		data.accounts[index].name = account.name;
-		data.accounts[index].balance = account.balance;
-
-		await writeFile(fileName, JSON.stringify(data, null, 2));
 		res.send(account);
 
 		logger.info(`PUT /account - ${JSON.stringify(account)}`);
@@ -97,22 +68,15 @@ async function updateAccont(req, res, next) {
 }
 
 async function updateBalance(req, res, next) {
-    try {
-		const account = req.body;
-		const data = JSON.parse(await readFile(fileName));
-		const index = data.accounts.findIndex((a) => a.id === account.id);
+	try {
+		let account = req.body;
 
 		if (!account.id || account.balance == null) {
 			throw new Error('ID and Balance are required.');
 		}
 
-		if (index === -1) {
-			throw new Error('Data not found.');
-		}
-
-		data.accounts[index].balance = account.balance;
-		await writeFile(fileName, JSON.stringify(data));
-		res.send(data.accounts[index]);
+		account = await AccountService.updateBalance(account);
+		res.send(account);
 
 		logger.info(
 			`PATCH /account/updateBalance - ${JSON.stringify(account)}`,
@@ -122,4 +86,11 @@ async function updateBalance(req, res, next) {
 	}
 }
 
-export default { createAccount, getAccounts, getAccount, deleteAccount, updateAccont, updateBalance };
+export default {
+	createAccount,
+	getAccounts,
+	getAccount,
+	deleteAccount,
+	updateAccont,
+	updateBalance,
+};
