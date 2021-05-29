@@ -1,0 +1,13 @@
+2021-05-29T00:22:47.597Z [my-bank-api] info: API STARTED
+2021-05-29T00:25:16.246Z [my-bank-api] error: ENOENT: no such file or directory, open 'C:\workspace\backend-igti\I-modulo\my-bank-api\accounts.json'
+2021-05-29T00:25:42.839Z [my-bank-api] info: API STARTED and File Created
+
+2021-05-29T00:31:29.539Z [my-bank-api] info: API STARTED
+2021-05-29T00:31:43.291Z [my-bank-api] info: GET /account
+2021-05-29T00:31:54.885Z [my-bank-api] info: POST /account - {"id":1,"name":"Adilson","balance":1500.5}
+2021-05-29T00:32:00.023Z [my-bank-api] info: POST /account - {"id":2,"name":"Tayanne","balance":1500.5}
+2021-05-29T00:32:11.189Z [my-bank-api] info: PUT /account - {"id":2,"name":"Hanna Luz","balance":150550.5}
+2021-05-29T00:36:21.080Z [my-bank-api] info: API STARTED
+2021-05-29T00:36:47.080Z [my-bank-api] error: Name and Balance are required.
+2021-05-29T00:37:01.306Z [my-bank-api] error: Name and Balance are required.
+2021-05-29T00:37:36.514Z [my-bank-api] info: API STARTED
