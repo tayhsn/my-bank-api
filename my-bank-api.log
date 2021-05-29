@@ -11,3 +11,13 @@
 2021-05-29T00:36:47.080Z [my-bank-api] error: Name and Balance are required.
 2021-05-29T00:37:01.306Z [my-bank-api] error: Name and Balance are required.
 2021-05-29T00:37:36.514Z [my-bank-api] info: API STARTED
+2021-05-29T15:52:22.460Z [my-bank-api] info: API STARTED
+2021-05-29T16:00:52.516Z [my-bank-api] info: API STARTED
+2021-05-29T16:01:22.524Z [my-bank-api] info: POST /account - {"id":3,"name":"Tayanne","balance":1500.5}
+2021-05-29T16:04:56.488Z [my-bank-api] info: API STARTED
+2021-05-29T16:11:47.021Z [my-bank-api] info: API STARTED
+2021-05-29T16:11:54.862Z [my-bank-api] info: GET /account
+2021-05-29T16:11:58.223Z [my-bank-api] info: GET /account/:id
+2021-05-29T16:12:04.072Z [my-bank-api] info: DELETE /account - 3
+2021-05-29T16:12:26.643Z [my-bank-api] info: PUT /account - {"id":2,"name":"Hanna Luz","balance":1345.5}
+2021-05-29T16:12:36.247Z [my-bank-api] info: PATCH /account/updateBalance - {"id":1,"balance":1000000}
