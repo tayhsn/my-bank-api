@@ -1,10 +1,10 @@
 {
-  "nextId": 6,
+  "nextId": 7,
   "accounts": [
     {
       "id": 1,
       "name": "Adilson",
-      "balance": 10000
+      "balance": 10
     },
     {
       "id": 2,

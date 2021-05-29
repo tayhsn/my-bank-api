@@ -41,3 +41,21 @@
 2021-05-29T16:48:39.690Z [my-bank-api] info: PUT /account - {"id":2,"name":"Hanna R Luz","balance":1345.5}
 2021-05-29T16:48:47.988Z [my-bank-api] info: PATCH /account/updateBalance - {"id":1,"name":"Adilson","balance":10000}
 2021-05-29T16:49:03.151Z [my-bank-api] info: DELETE /account - 4
+2021-05-29T17:08:53.786Z [my-bank-api] info: API STARTED
+2021-05-29T17:22:05.759Z [my-bank-api] info: API STARTED
+2021-05-29T17:22:20.307Z [my-bank-api] info: PATCH /account/updateBalance - {"id":1,"name":"Adilson","balance":{"id":1,"balance":0}}
+2021-05-29T17:23:06.092Z [my-bank-api] error: AccountRepository.updateAccount is not a function
+2021-05-29T17:23:39.925Z [my-bank-api] info: API STARTED
+2021-05-29T17:23:42.180Z [my-bank-api] info: PUT /account - {"id":2,"name":"Hanna R Luz","balance":1345.5}
+2021-05-29T17:23:46.801Z [my-bank-api] error: Registro não encontrado
+2021-05-29T17:23:52.086Z [my-bank-api] error: Registro não encontrado
+2021-05-29T17:24:05.851Z [my-bank-api] info: POST /account - {"id":6,"name":"Another one","balance":1500.5}
+2021-05-29T17:24:14.560Z [my-bank-api] info: PUT /account - {"id":6,"name":"Hanna R Luz","balance":1345.5}
+2021-05-29T17:24:23.232Z [my-bank-api] error: AccountRepository.updateAccont is not a function
+2021-05-29T17:24:39.317Z [my-bank-api] info: API STARTED
+2021-05-29T17:24:43.913Z [my-bank-api] error: AccountRepository.updateAccont is not a function
+2021-05-29T17:24:56.716Z [my-bank-api] info: API STARTED
+2021-05-29T17:24:57.704Z [my-bank-api] info: PATCH /account/updateBalance - {"id":6,"name":"Hanna R Luz","balance":{"id":6,"balance":0}}
+2021-05-29T17:25:15.118Z [my-bank-api] info: PATCH /account/updateBalance - {"id":1,"name":"Adilson","balance":{"id":1,"balance":0}}
+2021-05-29T17:25:24.256Z [my-bank-api] info: DELETE /account - 6
+2021-05-29T17:25:46.545Z [my-bank-api] info: API STARTED
