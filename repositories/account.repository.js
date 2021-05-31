@@ -24,14 +24,14 @@ async function getAccounts() {
 async function getAccount(id) {
 	const accounts = await getAccounts();
 	const account = accounts.find((account) => account.id === parseInt(id));
-    if(account) {
-	    return account;        
-    }
-    throw new Error("Registro não encontrado");
+	if (account) {
+		return account;
+	}
+	throw new Error('Registro não encontrado');
 }
 
 async function deleteAccount(id) {
-    const data = JSON.parse(await readFile(fileName));
+	const data = JSON.parse(await readFile(fileName));
 	data.accounts = data.accounts.filter(
 		(account) => account.id !== parseInt(id),
 	);
@@ -59,5 +59,5 @@ export default {
 	getAccounts,
 	getAccount,
 	deleteAccount,
-	updateAccount
+	updateAccount,
 };

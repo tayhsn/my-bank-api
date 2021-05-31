@@ -12,7 +12,7 @@ router.patch('/updateBalance', AccountController.updateBalance);
 
 router.use((err, req, res, next) => {
 	logger.error(`${err.message}`);
-	res.status(400).send({ error: err.mensage });
+	res.status(400).send({ error: err.message });
 });
 
 export default router;
