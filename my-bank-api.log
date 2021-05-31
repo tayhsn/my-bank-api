@@ -60,3 +60,4 @@
 2021-05-29T17:25:24.256Z [my-bank-api] info: DELETE /account - 6
 2021-05-29T17:25:46.545Z [my-bank-api] info: API STARTED
 2021-05-29T17:26:05.044Z [my-bank-api] info: PATCH /account/updateBalance - {"id":1,"name":"Adilson","balance":10}
+2021-05-31T13:14:27.236Z [my-bank-api] info: API STARTED
