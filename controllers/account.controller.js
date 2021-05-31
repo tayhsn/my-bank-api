@@ -30,7 +30,7 @@ async function getAccounts(req, res, next) {
 
 async function getAccount(req, res, next) {
 	try {
-		const account = await AccountService.getAccount(req.paramsid);
+		const account = await AccountService.getAccount(req.params.id);
 		res.send(account);
 		logger.info('GET /account/:id');
 	} catch (err) {
