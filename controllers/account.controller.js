@@ -49,7 +49,7 @@ async function deleteAccount(req, res, next) {
 	}
 }
 
-async function updateAccont(req, res, next) {
+async function updateAccount(req, res, next) {
 	try {
 		let account = req.body;
 
@@ -57,7 +57,7 @@ async function updateAccont(req, res, next) {
 			throw new Error('ID, Name and Balance are required.');
 		}
 
-		account = await AccountService.updateAccont(account);
+		account = await AccountService.updateAccount(account);
 
 		res.send(account);
 
@@ -91,6 +91,6 @@ export default {
 	getAccounts,
 	getAccount,
 	deleteAccount,
-	updateAccont,
+	updateAccount,
 	updateBalance,
 };

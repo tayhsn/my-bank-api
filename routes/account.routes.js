@@ -7,7 +7,7 @@ router.post('/', AccountController.createAccount);
 router.get('/', AccountController.getAccounts);
 router.get('/:id', AccountController.getAccount);
 router.delete('/:id', AccountController.deleteAccount);
-router.put('/', AccountController.updateAccont);
+router.put('/', AccountController.updateAccount);
 router.patch('/updateBalance', AccountController.updateBalance);
 
 router.use((err, req, res, next) => {
